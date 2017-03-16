@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_iluminacao"
+            android:icon="@drawable/ic_iluminacao"
+            android:title="Iluminacao" />
+        <item
+            android:id="@+id/nav_temperatura"
+            android:icon="@drawable/ic_temperatura"
+            android:title="Temperatura" />
+        <!--<item
+            android:id="@+id/nav_alarme"
+            android:icon="@drawable/ic_alarme"
+            android:title="Alarme" />-->
+
+    </group>
+</menu>
