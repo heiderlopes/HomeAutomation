@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.heiderlopes.homeautomation.SplashScreenActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etMensagem"
+        android:hint="Mensagem" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Publish"
+        android:onClick="publish"
+        android:id="@+id/btPublish"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etTopico"
+        android:hint="Topico" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subscribe"
+        android:onClick="subscribe"
+        android:id="@+id/btSubscribe"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Unsubscribe"
+        android:onClick="unsubscribe"
+        android:id="@+id/btUnsubscribe"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desconnect"
+        android:onClick="disconnectMQTTClient"
+        android:id="@+id/btDisconnect"/>
+
+
+</LinearLayout>
