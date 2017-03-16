@@ -34,6 +34,7 @@ import br.com.heiderlopes.homeautomation.ExampleActivity;
 import br.com.heiderlopes.homeautomation.R;
 import br.com.heiderlopes.homeautomation.service.MQTTService;
 import br.com.heiderlopes.homeautomation.utils.MQTTConstantes;
+import br.com.heiderlopes.homeautomation.utils.TTSManager;
 
 public class IluminacaoFragment extends Fragment {
 
@@ -41,6 +42,9 @@ public class IluminacaoFragment extends Fragment {
 
     private MqttAndroidClient client;
     private String TAG = "ILUMINACAO_FRAGMENT";
+    private TTSManager ttsManager = null;
+
+
 
     public IluminacaoFragment() {
 
@@ -51,12 +55,16 @@ public class IluminacaoFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
+        ttsManager = new TTSManager();
+        ttsManager.init(getContext());
+
         connectMQTTClient();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        ttsManager.shutDown();
         disconnectMQTTClient();
     }
 
@@ -236,6 +244,8 @@ public class IluminacaoFragment extends Fragment {
                 public void run() {
                     //createNotification(msg.toString());
                     Toast.makeText(getContext(), msg.toString(), Toast.LENGTH_LONG).show();
+
+                    ttsManager.initQueue(msg.toString());
                 }
             });
         }
